@@ -48,9 +48,7 @@ body {
 /* Portrait layout (default) */
 .app {
     background:url(../img/logo.png) no-repeat 50% 0%; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
+    display:block;             /* position in the center of the screen */
     max-height:100%;                   /* text area height */
     max-width:100%;                   /* text area width */
                                    /* offset horizontal: half of text area width */
