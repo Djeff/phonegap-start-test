@@ -30,7 +30,7 @@
             <img src="img/logo.png">
             <h1>Formulaire de sondage</h1>
             <div id="deviceready" class="blink">
-                <form action="#" method="POST">
+                <form action="http://lab.jeanfrancois-chaudet.fr/projets/Mobile_form/app.php" method="POST">
 
                     <input type="text" name="nom" value="" placeholder="Votre nom">
                     <input type="text" name="prénom" value="" placeholder="Votre prénom">
@@ -56,7 +56,6 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
-            jQuery(document).ready(function($){
                 $('input[type=submit]').submit(function(){
                     var nom=$('input[type=text][name=nom]').val();
                     var prenom=$('input[type=text][name=prenom]').val();
@@ -66,7 +65,7 @@
                     e.preventDefault();
                                 // On envoi la requête AJAX en POST
                     $.ajax({
-                      url: 'http://http://lab.jeanfrancois-chaudet.fr/projets/Mobile_form/app.php',
+                      url: 'http://lab.jeanfrancois-chaudet.fr/projets/Mobile_form/app.php',
                       type: "POST",
                       data:{ok:ok,nom:nom,prenom:prenom,questioncheckbox:questioncheckbox,questionradio:questionradio},
                       dataType: "JSON",
@@ -78,7 +77,6 @@
                         }       
                     }); 
 
-            });
             });
             // on App laod check for sending some stored json files when the device be
             //onsubmit send by ajax way to the serverscript a json file if the device is connected
