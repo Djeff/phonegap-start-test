@@ -47,8 +47,8 @@ body {
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
 
-        max-height:100%;                   /* text area height */
-        max-width:100%;        
+        min-height:100%;                   /* text area height */
+        min-width:100%;        
         background-position:0% 50%;
         border:1px solid orange;
 
