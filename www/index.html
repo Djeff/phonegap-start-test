@@ -29,16 +29,21 @@
         <div class="app">
             <h1>PhoneGap</h1>
             <div id="deviceready" class="blink">
-                <<form action="#" method="POST">
+                <form action="#" method="POST">
 
                     <input type="text" name="nom" value="" placeholder="Votre nom">
                     <input type="text" name="prénom" value="" placeholder="Votre prénom">
-                    <input type="radio" name="question" value="test1" placeholder="">
-                    <input type="radio" name="question" value="test2" placeholder="">
-                    <input type="radio" name="question" value="test3" placeholder="">
-                    <input type="checkbox" name="choix" value="dev">
-                    <input type="checkbox" name="choix" value="graph">
-                    <input type="checkbox" name="choix" value="com">
+
+                    <label for="radio">Faites un choix (eh oui)</label>
+                    <input type="radio" name="question" value="test1" placeholder=""><br>
+                    <input type="radio" name="question" value="test2" placeholder=""><br>
+                    <input type="radio" name="question" value="test3" placeholder=""><br>
+
+                    <label for="checkbox">Vous etes plutot</label>
+                    <p>Dev</p><input type="checkbox" name="choix" value="dev">
+                    <p>Graph</p><input type="checkbox" name="choix" value="graph">
+                    <p>Com</p><input type="checkbox" name="choix" value="com">
+                    <strong>Envoyer moi, envoyer moi </strong>
                     <input type="submit" name="submit" value="ok">
 
                 </form>
