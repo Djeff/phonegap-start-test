@@ -51,21 +51,18 @@ body {
     position:absolute;             /* position in the center of the screen */
     left:50%;
     top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+    max-height:100%;                   /* text area height */
+    max-width:100%;                   /* text area width */
                                    /* offset horizontal: half of text area width */
+    border:1px solid yellow;
 }
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
+        background-position:0% 50%;
+        border:1px solid orange;
+
     }
 }
 
@@ -120,8 +117,6 @@ border:2px solid red;
 height:200px;
 width:100px;}
 */
-
-
 input {
     border:1px solid red;
     font-size: 24px;
