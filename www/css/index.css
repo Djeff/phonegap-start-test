@@ -47,7 +47,7 @@ body {
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    background:url(../img/logo.png) no-repeat 50% 0%; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
     left:50%;
     top:50%;
@@ -70,9 +70,9 @@ body {
 }
 
 h1 {
-    font-size:24px;
+    font-size:32px;
     font-weight:normal;
-    margin:0px;
+    margin:0px auto;
     overflow:visible;
     padding:0px;
     text-align:center;
@@ -120,3 +120,13 @@ border:2px solid red;
 height:200px;
 width:100px;}
 */
+
+
+input {
+    border:1px solid red;
+    font-size: 24px;
+    max-width:100%;
+    height:auto;
+    display:block;
+    float:left;
+}
