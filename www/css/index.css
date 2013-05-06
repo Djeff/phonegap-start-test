@@ -94,18 +94,18 @@ h1 {
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
- /*
+ 
 .blink {
+
+min-width:100%;
+min-height:100%;
+
+/*
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+*/
 }
 
-
-#onlineblock {display:none;
-border:2px solid red;
-height:200px;
-width:100px;}
-*/
 input {
     border:1px solid red;
     font-size: 24px;
