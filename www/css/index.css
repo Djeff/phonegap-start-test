@@ -34,7 +34,6 @@ body {
 
 /* Portrait layout (default) */
 .app {
-    border:1px solid yellow;
     display: block;
     position:relative;
     height:100%;                
@@ -48,8 +47,6 @@ body {
     -webkit-text-size-adjust: 100%;             /* prevent webkit from resizing text to fit */
     min-height:100%;                
     min-width:100%;        
-    border:1px solid orange;
-
     }
 }
 img {display:block;margin:0 auto;max-width:90%;height:auto;}
@@ -112,7 +109,7 @@ hr {position: relative;display: block; width:100%;}
 
 input {
 position:relative;
-    border:1px solid red;
+    border:1px solid #ddd;
     font-size: 24px;
     max-width:70%;
     height:auto;
@@ -121,7 +118,7 @@ position:relative;
     margin:3% 3%;
     clear: left;
 }
-p{position:relative;display:block;float:left;width:90%;text-indent:3%;border:1px solid red;line-height:300%}
+p{position:relative;display:block;float:left;width:20%;text-indent:5%;border:1px solid #ddd;margin-top:3%;margin-right:100%;line-height: 300%;}
 
 label{display:inline-block;float:left;clear:left;font-size: 24px;font-weight: bold}
 
@@ -142,7 +139,7 @@ label{display:inline-block;float:left;clear:left;font-size: 24px;font-weight: bo
     width: 50%;
     text-align: center;
 }
-.red {
+.blue {
 
     background: none repeat scroll 0px 0px #22BAEA;
     color: white;
