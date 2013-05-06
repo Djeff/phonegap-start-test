@@ -37,19 +37,6 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-
-            // nous informe si le periphérique est off ou Online
-      function onOnline () {
-        var onlineblock = document.getElementById('onlineblock');
-        onlineblock.setAttribute('style','display:block');
-
-      }
-      function onOffline () {
-        var onlineblock = document.getElementById('onlineblock');
-        onlineblock.setAttribute('style','display:none');
-
-      }
-
     },
 
     // Update DOM on a Received Event
