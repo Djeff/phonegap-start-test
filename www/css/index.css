@@ -34,26 +34,29 @@ body {
 
 /* Portrait layout (default) */
 .app {
-    background-image:url(../img/logo.png);
-    background-repeat: no-repeat;
-    background-position: 50% 0%;
-           /* text area width */
     border:1px solid yellow;
+    display: block;
+    position:relative;
+    height:100%;                
+    width:100%;  
 }
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
-
-        min-height:100%;                
-        min-width:100%;        
-        background-position:0% 50%;
-        border:1px solid orange;
+    
+    -webkit-text-size-adjust: 100%;             /* prevent webkit from resizing text to fit */
+    min-height:100%;                
+    min-width:100%;        
+    border:1px solid orange;
 
     }
 }
+img {display:block;margin:0 auto;max-width:90%;height:auto;}
 
 h1 {
+    background-color: #000;
+    color: #fff; 
     margin-top:10%;
     font-size:32px;
     font-weight:normal;
@@ -95,7 +98,8 @@ h1 {
 }
  
 .blink {
-
+display: block;
+position:relative;
 min-width:100%;
 min-height:100%;
 
@@ -106,7 +110,7 @@ min-height:100%;
 }
 
 input {
-
+position:relative;
     border:1px solid red;
     font-size: 24px;
     max-width:100%;
@@ -114,4 +118,8 @@ input {
     display:inline-block;
     float:left;
     margin:3% 3%;
+    clear: both;
 }
+p{display:inline-block;float:left;}
+
+label,strong {display:inline-block;float:left;clear:;}
