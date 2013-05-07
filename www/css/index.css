@@ -146,3 +146,6 @@ label{display:inline-block;float:left;clear:left;font-size: 24px;font-weight: bo
 }
 
 
+#resultat{
+    color:red;font-size: 24px;border:1px solid #d5d5d5;display:block;float:left;clear:both;
+}
