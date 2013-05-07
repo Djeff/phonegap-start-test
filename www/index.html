@@ -39,10 +39,10 @@
                     <input type="radio" name="question" value="test3" placeholder=""><br>
                     <hr>
                     <label for="checkbox">Vous êtes plutot:</label>
-                    <p>Dev<input type="checkbox" name="choix" value="dev"></p>
+                   <!-- <p>Dev<input type="checkbox" name="choix" value="dev"></p>
                     <p>Graph<input type="checkbox" name="choix" value="graph"></p>
                     <p>Com<input type="checkbox" name="choix" value="com"></p>
-                    <hr>
+                    <hr> -->
                     <label>Envoyez moi, envoyez moi !</label>
                     <input type="submit" class="button blue" name="valid" value="ok">
                 </form>
@@ -53,10 +53,9 @@
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript">
         app.initialize();
-        </script>
-        <script type="text/javascript" >
-            jQuery(document).ready(function($){
+        jQuery(document).ready(function($){
                 console.log('inside jquery');
+
                     $('input[type=submit][name=valid]').click(function(e){
 
                         console.log('inside jquery submit');
@@ -72,16 +71,13 @@
                         console.log(ok);
 
                         e.preventDefault();
-;
                         console.log('after preventdefault');
 
                         $.ajax({
-                          url: 'http://lab.jeanfrancois-chaudet.fr/projets/Mobile_form/app.php',
-                          type: "POST",
+                          url:"http://lab.jeanfrancois-chaudet.fr/projets/Mobile_form/app.php",
+                          type:"POST",
                           data:{ok:ok,nom:nom,prenom:prenom,radio:radio},
-                          dataType: "JSON",
-
-
+                          dataType:"JSON",
                           success: function(data) {
                                $('#resultat').html('').append('<strong> Success! </strong>');
                                console.log('In success');
@@ -89,16 +85,14 @@
                           error: function(jqXHR, textStatus, errorThrown) {
                                 $('#resultat').html('').append('<strong> Error :(  </strong>');
                                     console.log(textStatus);
-                                    console.log(errorThrown);
                             },
-                        console.log(data);       
                         }); 
                     });
             });
             // on App laod check for sending some stored json files when the device be
             //onsubmit send by ajax way to the serverscript a json file if the device is connected
             //elseif stock it like a json file 
-            
         </script>
+
     </body>
 </html>
