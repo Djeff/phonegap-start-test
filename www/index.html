@@ -55,24 +55,14 @@
         app.initialize();
         jQuery(document).ready(function($){
                 console.log('inside jquery');
-
                     $('input[type=submit][name=valid]').click(function(e){
-
                         console.log('inside jquery submit');
                         var ok=$('input[type=submit][name=valid]').val();
                         var nom=$('input[type=text][name=nom]').val();
                         var prenom=$('input[type=text][name=prenom]').val();
                         var radio=$('input[type=radio][name=question]:checked').val();
                        // var questioncheckbox=$('input[type=checkbox][name=choix]:checked').val();
-
-                        console.log(nom);
-                        console.log(prenom);
-                        console.log(radio);
-                        console.log(ok);
-
                         e.preventDefault();
-                        console.log('after preventdefault');
-
                         $.ajax({
                           url:"http://lab.jeanfrancois-chaudet.fr/projets/Mobile_form/app.php",
                           type:"POST",
@@ -85,6 +75,7 @@
                           error: function(jqXHR, textStatus, errorThrown) {
                                 $('#resultat').html('').append('<strong> Error :(  </strong>');
                                     console.log(textStatus);
+                                    console.log(jqXHR.readyState);
                             },
                         }); 
                     });
