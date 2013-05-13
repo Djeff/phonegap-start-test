@@ -101,7 +101,7 @@
                           dataType:"JSON",
                           success: function(data) {
                                $('#resultat').html('').append('<strong> Success!'+data.secret+'</strong>');
-                               $('#interactive').removeClass('blue').addClass('yellow');
+                               $('#interactive').removeClass('blue orange').addClass('yellow');
                             },
                           error: function(jqXHR, textStatus, errorThrown) {
                                 $('#resultat').html('').append('<strong style="color:red;"> Error :(  </strong>');

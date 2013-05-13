@@ -183,15 +183,3 @@ label{display:inline-block;float:left;clear:left;font-size: 24px;font-weight: bo
     text-align: center;
     font-size: 24px;display:block;clear:both;
 }
-
-@-webkit-keyframes color_change {
-from { background-color: #1533AD; }
-to { background-color: #FEB200; }
-}
-
-div#interactive {
-    height:6%;
-    background-color: #1533AD;
-    -webkit-animation: color_change 1s infinite alternate;
-    animation: color_change 1s infinite alternate;   
-}
