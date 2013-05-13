@@ -24,10 +24,18 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Frerault Expertises App</title>
+        <script type="text/javascript" >
+        jQuery(document).ready(function(){
+
+
+        });
+        </script>
     </head>
     <body>
         <div class="app">
+        <div id="logo">
             <img src="img/logo.png">
+        </div>
             <h1>Formulaire de sondage</h1>
                   <form action="http://lab.jeanfrancois-chaudet.fr/projets/Mobile_form/app.php" method="POST">
                     <input type="text" name="nom" value="" placeholder="Votre nom">
@@ -43,8 +51,7 @@
                     <p>Graph<input type="checkbox" name="choix" value="graph"></p>
                     <p>Com<input type="checkbox" name="choix" value="com"></p>
                     <hr> -->
-                    <label>Envoyez moi, envoyez moi !</label>
-                    <input type="submit" class="button blue" name="valid" value="ok">
+                    <input type="submit" id="interactive" class="button blue" name="valid" value="Envoyer">
                 </form>
             </div>
         </div>
@@ -54,8 +61,8 @@
         <script type="text/javascript">
         app.initialize();
         jQuery(document).ready(function($){
-                console.log('inside jquery');
-                    $('input[type=submit][name=valid]').click(function(e){
+        console.log('inside jquery');
+            $('input[type=submit][name=valid]').click(function(e){
                         console.log('inside jquery submit');
                         var ok=$('input[type=submit][name=valid]').val();
                         var nom=$('input[type=text][name=nom]').val();
@@ -69,17 +76,16 @@
                           data:{ok:ok,nom:nom,prenom:prenom,radio:radio},
                           dataType:"JSON",
                           success: function(data) {
-                               $('#resultat').html('').append('<strong> Success! </strong>');
-                               console.log('In success');
+                               $('#resultat').html('').append('<strong> Success!'+data.secret+'</strong>');
+                               $('#interactive').removeClass('blue').addClass('yellow');
                             },
                           error: function(jqXHR, textStatus, errorThrown) {
-                                $('#resultat').html('').append('<strong> Error :(  </strong>');
-                                    console.log(textStatus);
-                                    console.log(jqXHR.readyState);
+                                $('#resultat').html('').append('<strong style="color:red;"> Error :(  </strong>');
+                                $('#interactive').removeClass('blue yellow').addClass('orange');
                             },
                         }); 
-                    });
             });
+        });
             // on App laod check for sending some stored json files when the device be
             //onsubmit send by ajax way to the serverscript a json file if the device is connected
             //elseif stock it like a json file 
