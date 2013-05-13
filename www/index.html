@@ -72,15 +72,15 @@
             var Latitude=position.coords.latitude;   
             var Longitude=position.coords.longitude;   
             var Altitude=position.coords.altitude;         
-            var precision=position.coords.accuracy;          
+            var Precision=position.coords.accuracy;          
             var horodatage=position.timestamp;
-            $('#resultat').html('').append(''+Latitude+''Longitude+''precision+''horodatage+Altitude+'');
+            $('#resultat').html('').append('lalilalou Geoloc :'+Latitude+''+Longitude+''+Precision+''+horodatage+''+Altitude+'');
             
         };
         function onError(error) {
             var code = error.code;
             var message = error.message;
-            $('#resultat').html('').append(''+code+message+'');
+            $('#resultat').html('').append(''+code+''+message+'');
 
 
         }
@@ -93,11 +93,11 @@
             var prenom=$('input[type=text][name=prenom]').val();
             var radio=$('input[type=radio][name=question]:checked').val();
                        // var questioncheckbox=$('input[type=checkbox][name=choix]:checked').val();
-            e.preventDefault();
+            //e.preventDefault();
             $.ajax({
                 url:"http://lab.jeanfrancois-chaudet.fr/projets/Mobile_form/app.php",
                 type:"POST",
-                data:{ok:ok,nom:nom,prenom:prenom,radio:radio},
+                data:{ok:ok,nom:nom,prenom:prenom,radio:radio,latitude:Latitude,longitude:Longitude,precision:precision},
                 dataType:"JSON",
                 success: function(data) {
                     $('#resultat').html('').append('<strong> Success!'+data.secret+'</strong>');
