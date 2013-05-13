@@ -93,7 +93,7 @@
             var prenom=$('input[type=text][name=prenom]').val();
             var radio=$('input[type=radio][name=question]:checked').val();
                        // var questioncheckbox=$('input[type=checkbox][name=choix]:checked').val();
-            //e.preventDefault();
+            e.preventDefault();
             $.ajax({
                 url:"http://lab.jeanfrancois-chaudet.fr/projets/Mobile_form/app.php",
                 type:"POST",
