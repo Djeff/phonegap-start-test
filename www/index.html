@@ -60,55 +60,55 @@
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript">
         app.initialize();
-        // onSuccess Callback
+
+
+        jQuery(document).ready(function($){
+        console.log('inside jquery');
+                // onSuccess Callback
         //   This method accepts a `Position` object, which contains
         //   the current GPS coordinates
         //
         var onSuccess = function(position) {
-            alert('Latitude: '          + position.coords.latitude          + '\n' +
-                  'Longitude: '         + position.coords.longitude         + '\n' +
-                  'Altitude: '          + position.coords.altitude          + '\n' +
-                  'Accuracy: '          + position.coords.accuracy          + '\n' +
-                  'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-                  'Heading: '           + position.coords.heading           + '\n' +
-                  'Speed: '             + position.coords.speed             + '\n' +
-                  'Timestamp: '         + position.timestamp                + '\n');
+            var Latitude=position.coords.latitude;   
+            var Longitude=position.coords.longitude;   
+            var Altitude=position.coords.altitude;         
+            var precision=position.coords.accuracy;          
+            var horodatage=position.timestamp;
+            $('#resultat').html('').append(''+Latitude+''Longitude+''precision+''horodatage+Altitude+'');
+            
         };
-
-        // onError Callback receives a PositionError object
-        //
         function onError(error) {
-            alert('code: '    + error.code    + '\n' +
-                  'message: ' + error.message + '\n');
-        }
+            var code = error.code;
+            var message = error.message;
+            $('#resultat').html('').append(''+code+message+'');
 
+
+        }
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
-        jQuery(document).ready(function($){
-        console.log('inside jquery');
-            $('input[type=submit][name=valid]').click(function(e){
-                        console.log('inside jquery submit');
-                        var ok=$('input[type=submit][name=valid]').val();
-                        var nom=$('input[type=text][name=nom]').val();
-                        var prenom=$('input[type=text][name=prenom]').val();
-                        var radio=$('input[type=radio][name=question]:checked').val();
+        $('input[type=submit][name=valid]').click(function(e){
+            console.log('inside jquery submit');
+            var ok=$('input[type=submit][name=valid]').val();
+            var nom=$('input[type=text][name=nom]').val();
+            var prenom=$('input[type=text][name=prenom]').val();
+            var radio=$('input[type=radio][name=question]:checked').val();
                        // var questioncheckbox=$('input[type=checkbox][name=choix]:checked').val();
-                        e.preventDefault();
-                        $.ajax({
-                          url:"http://lab.jeanfrancois-chaudet.fr/projets/Mobile_form/app.php",
-                          type:"POST",
-                          data:{ok:ok,nom:nom,prenom:prenom,radio:radio},
-                          dataType:"JSON",
-                          success: function(data) {
-                               $('#resultat').html('').append('<strong> Success!'+data.secret+'</strong>');
-                               $('#interactive').removeClass('blue orange').addClass('yellow');
-                            },
-                          error: function(jqXHR, textStatus, errorThrown) {
-                                $('#resultat').html('').append('<strong style="color:red;"> Error :(  </strong>');
-                                $('#interactive').removeClass('blue yellow').addClass('orange');
-                            },
-                        }); 
-            });
+            e.preventDefault();
+            $.ajax({
+                url:"http://lab.jeanfrancois-chaudet.fr/projets/Mobile_form/app.php",
+                type:"POST",
+                data:{ok:ok,nom:nom,prenom:prenom,radio:radio},
+                dataType:"JSON",
+                success: function(data) {
+                    $('#resultat').html('').append('<strong> Success!'+data.secret+'</strong>');
+                    $('#interactive').removeClass('blue orange').addClass('yellow');
+                },
+                 error: function(jqXHR, textStatus, errorThrown) {
+                    $('#resultat').html('').append('<strong style="color:red;"> Error :(  </strong>');
+                    $('#interactive').removeClass('blue yellow').addClass('orange');
+                },
+            }); 
+        });
         });
             // on App laod check for sending some stored json files when the device be
             //onsubmit send by ajax way to the serverscript a json file if the device is connected
