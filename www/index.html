@@ -49,10 +49,8 @@
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript">
         app.initialize();
-
         jQuery(document).ready(function($){
         console.log('inside jquery');
-
         $('input[type=submit][name=valid]').click(function(e){
             console.log('inside jquery submit');
             var ok=$('input[type=submit][name=valid]').val();
@@ -66,7 +64,7 @@
                 data:{ok:ok,nom:nom,prenom:prenom,radio:radio},
                 dataType:"JSON",
                 success: function(data) {
-                    $('#resultat').html('').append('<strong> Success!'+data.secret+'</strong>');
+                    $('#resultat').html('').append('<strong> Success!'+data.nom+'</strong>');
                     $('#interactive').removeClass('blue orange').addClass('yellow');
                 },
                  error: function(jqXHR, textStatus, errorThrown) {
@@ -80,6 +78,5 @@
             //onsubmit send by ajax way to the serverscript a json file if the device is connected
             //elseif stock it like a json file 
         </script>
-
     </body>
 </html>
